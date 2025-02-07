@@ -1,0 +1,73 @@
+const messages = [
+    "Seguro?",
+    "Muy seguro??",
+    "Estas 100% seguro?",
+    "Andale di que si",
+    "Piensalo otra vez",
+    "Si dices que no me voy a awitar",
+    "Muy muy awitado",
+    "Voy a estar muy muy muy awitado",
+    "Bueno pues",
+    "DI QUE SI YAAAAAAAAA"
+];
+
+let messageIndex = 0;
+
+function handleNoClick() {
+    const noButton = document.querySelector('.no-button');
+    const yesButton = document.querySelector('.yes-button');
+    noButton.textContent = messages[messageIndex];
+    messageIndex = (messageIndex + 1) % messages.length;
+    const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+    yesButton.style.fontSize = `${currentSize * 1.5}px`;
+}
+
+function handleYesClick() {
+    window.location.href = "yes_page.html";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quieres ser mi San Valentin?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quieres ser mi San Valentin?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Si</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="gif.gif" alt="GIF animado" width="450" height="522">
+               </div>
+    </div>
+    <script src="const messages = [.js"></script>
+</body>
+</html>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffbcfe;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
